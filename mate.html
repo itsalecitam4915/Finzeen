@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntegralMatch Finance</title>
+
+    <link rel="stylesheet" href="mate.css">
+</head>
+
+<body>
+
+    <!-- FONDO -->
+    <div class="bg-shape shape1"></div>
+    <div class="bg-shape shape2"></div>
+    <div class="bg-shape shape3"></div>
+
+    <!-- PANTALLA DE INICIO -->
+
+    <section id="startScreen" class="start-screen">
+
+        <div class="start-card">
+
+            <div class="logo">
+                📈
+            </div>
+
+            <h1>IntegralMatch Finzeen</h1>
+
+            <p class="subtitle">
+                Empareja conceptos financieros relacionados con el
+                cálculo integral y demuestra tus conocimientos.
+            </p>
+
+            <div class="instructions">
+
+                <h3>📋 Instrucciones</h3>
+
+                <ul>
+                    <li>Selecciona un concepto.</li>
+                    <li>Selecciona la definición correcta.</li>
+                    <li>Gana puntos por cada acierto.</li>
+                    <li>Completa todas las parejas antes de que termine el tiempo.</li>
+                </ul>
+
+            </div>
+
+            <button id="startBtn" class="btn-primary">
+                🚀 Comenzar Juego
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- JUEGO -->
+
+    <main id="gameContainer" class="game-container hidden">
+
+        <!-- HEADER -->
+
+        <header class="game-header">
+
+            <div class="header-left">
+                <h1>📈 IntegralMatch Finzeen</h1>
+                <p>Cálculo Integral aplicado a las Finanzas</p>
+            </div>
+
+            <div class="header-right">
+
+                <div class="stat-card">
+                    <span>⭐ Puntos</span>
+                    <strong id="score">0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>⏱ Tiempo</span>
+                    <strong id="timer">60</strong>
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- BARRA DE PROGRESO -->
+
+        <section class="progress-section">
+
+            <div class="progress-info">
+                <span>Progreso</span>
+                <span id="progressText">0%</span>
+            </div>
+
+            <div class="progress-container">
+
+                <div id="progressBar" class="progress-bar"></div>
+
+            </div>
+
+        </section>
+
+        <!-- TABLERO -->
+
+        <section class="board">
+
+            <!-- CONCEPTOS -->
+
+            <div class="panel">
+
+                <div class="panel-title">
+                    📚 Conceptos
+                </div>
+
+                <div id="conceptsContainer" class="cards-container">
+
+                </div>
+
+            </div>
+
+            <!-- DEFINICIONES -->
+
+            <div class="panel">
+
+                <div class="panel-title">
+                    📝 Definiciones
+                </div>
+
+                <div id="definitionsContainer" class="cards-container">
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ACCIONES -->
+
+        <section class="actions">
+
+            <button id="restartBtn" class="btn-secondary">
+                🔄 Reiniciar
+            </button>
+
+        </section>
+
+    </main>
+
+    <!-- MODAL FINAL -->
+
+    <div id="resultModal" class="modal hidden">
+
+        <div class="modal-content">
+
+            <div class="trophy">
+                🏆
+            </div>
+
+            <h2>¡Juego Completado!</h2>
+
+            <p class="modal-subtitle">
+                Has terminado el desafío financiero.
+            </p>
+
+            <div class="results-grid">
+
+                <div class="result-card">
+                    <span>Puntos</span>
+                    <strong id="finalScore">0</strong>
+                </div>
+
+                <div class="result-card">
+                    <span>Tiempo Restante</span>
+                    <strong id="finalTime">0 s</strong>
+                </div>
+
+                <div class="result-card">
+                    <span>Precisión</span>
+                    <strong id="finalAccuracy">0%</strong>
+                </div>
+
+                <div class="result-card">
+                    <span>Nivel</span>
+                    <strong id="finalRank">Bronce</strong>
+                </div>
+
+            </div>
+
+            <!-- PREGUNTA FINAL -->
+
+            <div class="quiz-section">
+
+                <h3>
+                    🤔 Pregunta de Reflexión
+                </h3>
+
+                <p>
+                    ¿Por qué son importantes las integrales en las finanzas?
+                </p>
+
+                <div class="quiz-options">
+
+<button class="quiz-btn" data-correct="true">
+    A) Porque ayudan a calcular acumulaciones y analizar inversiones.
+</button>
+
+<button class="quiz-btn">
+    B) Porque sirven para diseñar billetes.
+</button>
+
+<button class="quiz-btn">
+    C) Porque reemplazan la contabilidad.
+</button>
+
+                </div>
+
+                <p id="quizResult" class="quiz-result"></p>
+
+            </div>
+
+            <button id="playAgainBtn" class="btn-primary">
+                🎮 Jugar de Nuevo
+            </button>
+            
+                    <div class="btn-container">
+
+            <a href="index.html" class="back-btn">
+                ← Volver a la Tienda
+            </a>
+
+        </div>
+
+        </div>
+
+    </div>
+
+    <script src="mate.js"></script>
+
+</body>
+
+</html>

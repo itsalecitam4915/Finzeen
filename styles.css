@@ -1,0 +1,583 @@
+
+@font-face {
+    font-family: 'MiFuente1';
+    src: url('fonts/rg.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'MiFuente2';
+    src: url('fonts/gas.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'MiFuente3';
+    src: url('fonts/lemon.ttf') format('truetype');
+}
+
+:root {
+    --savg-blue: #132e8b;
+    --savg-blue-light: #3156d3;
+    --savg-green: #4c8632;
+    --savg-green-light: #6cb14d;
+    --bg-gray: #f0f2f5;
+    --text-main: #1c1e21;
+    --text-muted: #606770;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'MiFuente1', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    background:
+        radial-gradient(circle at top left, rgba(76,134,50,0.08), transparent 25%),
+        radial-gradient(circle at top right, rgba(19,46,139,0.08), transparent 25%),
+        var(--bg-gray);
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar {
+    background: linear-gradient(90deg, var(--savg-blue), #1a3fae);
+    padding: 14px 0;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(19,46,139,0.25);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.7rem;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: var(--savg-green-light);
+}
+
+/* ==========================================================================
+   BANNER PRINCIPAL (HEADER APP)
+   ========================================================================== */
+.app-main-header {
+    background: rgba(255,255,255,0.95);
+    margin-top: 28px;
+    padding: 35px 40px;
+    border-radius: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    box-shadow:
+        0 10px 30px rgba(19,46,139,0.08),
+        0 2px 8px rgba(0,0,0,0.05);
+    border: 1px solid rgba(255,255,255,0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.app-main-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(120deg, rgba(76,134,50,0.06), transparent 40%),
+        linear-gradient(-120deg, rgba(19,46,139,0.06), transparent 40%);
+    pointer-events: none;
+}
+
+.banner-left-group {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.app-icon {
+    width: 145px;
+    height: 145px;
+    background: linear-gradient(135deg, var(--savg-blue), var(--savg-blue-light));
+    color: white;
+    font-size: 4rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 36px;
+    box-shadow:
+        0 10px 25px rgba(19,46,139,0.3),
+        inset 0 1px 4px rgba(255,255,255,0.2);
+    transition: 0.3s ease;
+    flex-shrink: 0;
+}
+
+.app-icon:hover {
+    transform: scale(1.04) rotate(-2deg);
+}
+
+.app-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.app-title-container h1 {
+    font-size: 2.6rem;
+    color: var(--savg-blue);
+    margin-bottom: 4px;
+    line-height: 1.1;
+    font-family: 'MiFuente3';
+}
+
+.tagline {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.dev-name {
+    color: var(--savg-green);
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.82rem;
+    letter-spacing: 1.5px;
+}
+
+.quick-stats {
+    display: flex;
+    gap: 12px;
+}
+
+.quick-stats span {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    padding: 8px 14px;
+    border-radius: 999px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    transition: 0.25s ease;
+}
+
+.quick-stats span:hover {
+    transform: translateY(-2px);
+    border-color: rgba(19,46,139,0.15);
+}
+
+/* ==========================================================================
+   BOTÓN DE DESCARGA & ACCIONES
+   ========================================================================== */
+.action-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 220px;
+}
+
+.download-main-btn {
+    background: linear-gradient(135deg, var(--savg-green), var(--savg-green-light));
+    color: white;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 32px;
+    border-radius: 18px;
+    text-align: center;
+    transition: 0.25s ease;
+    width: 100%;
+    box-shadow:
+        0 10px 24px rgba(76,134,50,0.28),
+        inset 0 1px 2px rgba(255,255,255,0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.download-main-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.18);
+    transform: skewX(-25deg);
+    transition: 0.5s;
+}
+
+.download-main-btn:hover::before {
+    left: 120%;
+}
+
+.download-main-btn:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 14px 30px rgba(76,134,50,0.35);
+}
+
+.btn-top {
+    font-size: 0.75rem;
+    opacity: 0.9;
+    text-transform: uppercase;
+}
+
+.btn-bottom {
+    font-size: 1.35rem;
+    font-weight: 800;
+}
+
+.file-info {
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-top: 12px;
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   ESTILOS GENERALES DE TARJETAS (CARDS)
+   ========================================================================== */
+.card {
+    background: rgba(255,255,255,0.96);
+    padding: 28px;
+    border-radius: 20px;
+    border: 1px solid rgba(19,46,139,0.08);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 16px 30px rgba(19,46,139,0.08),
+        0 4px 10px rgba(0,0,0,0.06);
+}
+
+h2 {
+    font-size: 1.6rem;
+    color: var(--savg-blue);
+    margin-bottom: 16px;
+    font-family: 'MiFuente2';
+}
+
+h3 {
+    color: var(--savg-blue);
+    margin-bottom: 16px;
+    font-family: 'MiFuente2';
+}
+
+p {
+    margin-bottom: 15px;
+    color: #4b5563;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   SECCIÓN DESCRIPCIÓN (BANNER ANCHO)
+   ========================================================================== */
+.description-wide-card {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+/* ==========================================================================
+   GRID PARA LOS 3 BANNERS INFORMATIVOS (DEBAJO DE LA DESCRIPCIÓN)
+   ========================================================================== */
+.info-banners-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
+    gap: 24px;
+    margin-bottom: 50px;
+    align-items: stretch; /* Hace que todas tengan la misma altura */
+}
+
+/* Modificación de la Ficha Técnica para adaptarla al grid angosto */
+.tech-specs {
+    border-left: 6px solid var(--savg-blue);
+    background: linear-gradient(135deg, #f4f7fe, #fcfdfe);
+}
+
+.specs-list {
+    list-style: none;
+}
+
+.specs-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eef2f7;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+}
+
+.specs-list li:last-child {
+    border-bottom: none;
+}
+
+/* ==========================================================================
+   SECCIÓN MATE (CÁLCULO DIFERENCIAL)
+   ========================================================================== */
+.section-mate {
+    border-left: 6px solid #ff6b00;
+    background: linear-gradient(135deg, #fff1e6, #fff7f0);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Empuja el botón al fondo si hay espacio */
+}
+
+.mate-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.mate-leaf {
+    font-size: 1.5rem;
+}
+
+.section-mate h3 {
+    color: #cc5500;
+    margin: 0;
+}
+
+.section-mate p {
+    color: #5a4a42;
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+.mate-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 16px;
+    background: #ff6b00;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.88rem;
+    text-align: center;
+    transition: .3s ease;
+}
+
+.mate-btn:hover {
+    background: #e65c00;
+}
+
+/* ==========================================================================
+   SECCIÓN ECO (COMPROMISO ECOLÓGICO)
+   ========================================================================== */
+.section-eco {
+    border-left: 6px solid var(--savg-green);
+    background: linear-gradient(135deg, #f0fdf4, #f7fff8);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.eco-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.eco-leaf {
+    font-size: 1.5rem;
+}
+
+.section-eco h3 {
+    color: #386324;
+    margin: 0;
+}
+
+.section-eco p {
+    color: #3a4735;
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+.eco-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 16px;
+    background: var(--savg-green);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.88rem;
+    text-align: center;
+    transition: .3s ease;
+}
+
+.eco-btn:hover {
+    background: var(--savg-green-light);
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.main-footer {
+    text-align: center;
+    padding: 45px 0;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+}
+
+/* ==========================================================================
+   DISEÑO RESPONSIVO (MOBILE ADAPTACIONES)
+   ========================================================================== */
+@media (max-width: 900px) {
+    .app-main-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .banner-left-group {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .app-details {
+        align-items: center;
+    }
+
+    .quick-stats {
+        justify-content: center;
+    }
+
+    .action-area {
+        width: 100%;
+    }
+
+    .info-banners-grid {
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+}
+
+
+/* ===== GALERÍA TIPO PLAY STORE ===== */
+
+.screenshots-gallery {
+    width: 100%;
+    padding: 30px 0;
+    overflow: hidden;
+}
+
+.gallery-wrapper {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 20px;
+    scrollbar-width: none;
+}
+
+.gallery-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.screenshot-item {
+    flex: 0 0 auto;
+}
+
+.screenshot-item img {
+    width: 220px;
+    height: 470px;
+    object-fit: cover;
+    border-radius: 22px;
+    display: block;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.screenshot-item img:hover {
+    transform: scale(1.03);
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .screenshot-item img {
+        width: 180px;
+        height: 380px;
+    }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+    .gallery-wrapper {
+        gap: 12px;
+        padding: 10px;
+    }
+
+    .screenshot-item img {
+        width: 160px;
+        height: 340px;
+    }
+}
+
+
+.gallery-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.gallery-wrapper{
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    cursor: grab;
+}
+
+.gallery-wrapper::-webkit-scrollbar{
+    display: none;
+}
+
+.gallery-wrapper.dragging{
+    cursor: grabbing;
+    user-select: none;
+}
+
+.gallery-btn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.gallery-btn.prev{
+    left: 10px;
+}
+
+.gallery-btn.next{
+    right: 10px;
+}
